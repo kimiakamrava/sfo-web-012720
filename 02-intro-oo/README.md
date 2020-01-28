@@ -83,3 +83,4 @@ bank_account = {"user_id": 3, "balance": 100}
 - Imposter Syndrome map
   - Perception
   - Reality
+![Imposter Syndrome Diagram](imposter-diagram.jpg)
