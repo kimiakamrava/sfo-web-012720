@@ -99,7 +99,7 @@ def game_hash
           rebounds: 3,
           assists: 2,
           steals: 1,
-          blocks: 1,
+          blocks: 1, 
           slam_dunks: 0
         },
         "Brendan Haywood" => {
@@ -117,33 +117,19 @@ def game_hash
   }
 end
 
-# game_hash[:home][:players]["Alan Anderson"][:points]
-
-def num_points_scored(player_name)
-  # get a list of all the players
-  # find the player whose name matches the argument 'player_name'
-  # return that player's points
-  # game_hash.each do |
-  get_players.each do |player, stats|
-    if player == player_name
-      return stats[:points]
-    end
-  end
+# EXERCISE
+# What do the following return?
+#
+arr = (1..100).to_a
+#
+evenArr = arr.map do |num|
+  num.even?
 end
 
-# # EXERCISE
-# # What do the following return?
 #
-# arr = (1..100).to_a
-#
-# arr.map do |num|
-#   num.even?
-# end
-#
-# arr.select do |num|
-#   7
-# end
-
+selectArr = arr.select do |num|
+  7
+end
 
 instructors = [
   {name: 'Alex', hometown: 'upstate ny', mood: 'excited'},
@@ -153,16 +139,31 @@ instructors = [
 
 # EXERCISE:
 # Define a method called get_names that takes an array of instructors
-# Returns just their names.
-def get_names(instructors)
-  instructors.map do |instructor|
-    instructor[:name]
+# Returns an array of just their names.
+def get_names(arr)
+  arr.map do |instr|
+    instr[:name]
   end
 end
 
-binding.pry
+instructors = get_names(instructors)
+
+# game_hash[:home][:players]["Alan Anderson"][:points]
+
+def num_points_scored(player_name)
+  # get a list of all the players
+  # find the player whose name matches the argument 'player_name'
+  # return that player's points
+  player_hash[player_name][:points]
+end
 
 # helper method
-def get_players
+def player_hash
   game_hash[:home][:players].merge(game_hash[:away][:players])
 end
+
+def shoe_size(player_name)
+  player_hash[player_name][:shoe]
+end
+
+# puts "Hi Mom!"
