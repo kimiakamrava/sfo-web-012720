@@ -1,17 +1,16 @@
 class Ingredient
-  attr_accessor :name, :food_group
-  # attr_accessor :name, :food_group, :recipes
-  @@all = []
+  attr_accessor :name, :type
 
-  def initialize(name, food_group = "vegetable")
-    @name = name
-    @food_group = food_group
-    # @recipes = []
-    @@all << self
-  end
+  @@all = []
 
   def self.all
     @@all
+  end
+
+  def initialize(name, type)
+    @name = name
+    @type = type
+    @@all << self
   end
 
   def recipe_ingredients

@@ -22,7 +22,7 @@
 - **Build the Recipe model**
   1. Create class
   2. Write Getter & Setter methods with `attr_` macros
-  3. Write Getters & Setters without macros
+  3. ***Getters & Setters without macros?***
   4. Define `Recipe#initialize`
   5. Implement default arguments
   6. ⚠️ ***How should we keep track of a recipe's ingredients?***
@@ -33,7 +33,7 @@
 
 ## Join Models ⛓
 
-- ⚠️ ***What do we mean by maintaining a Single Source of Truth?**
+- ⚠️ ***What do we mean by maintaining a Single Source of Truth?***
 - Pro tips
   - *Don't* store collections of objects on other objects
   - *Don't* store one object in multiple collections
@@ -58,14 +58,14 @@
 ## Testing 💣
 
 - Do all the things!
-- Lean on run file, Faker, and loops to create instances and reduce feedback
+- Lean on `run.rb` file, Faker, loops to create instances, reduce feedback time
 - Use `pry` or `byebug` or your IDE's debugger!
 
 ## Administrative 🧐
 
 - Keeping up with Labs
   - The First Week is one of the hardest
-  - Shoot for at least 80-90%
+  - Achieve at least 80-90% completion
   - Move on to another topic if you feel like a raptor
 - Chasing the Green Circle
   - Beware pattern matching
