@@ -5,6 +5,6 @@ class Die
   end
 
   def roll
-    (rand * @faces).to_i + 1
+    rand(1..@faces)
   end
 end

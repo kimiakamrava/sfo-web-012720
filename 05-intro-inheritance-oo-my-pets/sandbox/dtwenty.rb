@@ -6,10 +6,11 @@ class DTwenty < Die
   def roll
     result = super
     if result == 20
-      puts "Critical hit!!"
+      puts "CRITICAL HIT!!"
     elsif result == 1
-      puts "Critical failure!!"
+      puts "Critical failure..."
     end
     result
   end
+
 end
