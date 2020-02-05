@@ -8,6 +8,8 @@
 - [ ] Define ORM 🍬
 - [ ] Create an ORM 🍭
 
+---
+
 ## Database and SQL Review with Books and Authors 🏗
 
 *What does the design philosophy of* Domain Modeling *look like in a relational database?*
@@ -16,67 +18,44 @@
 
 **books table**
 
-| id | title | author_id |
-| --- |--- | --- |
-| 1 | The Sympathizer | 1 |
-| 2 | New and Selected Poems, Volume 2 | 5 |
-| 3 | One Hundred Years of Solitude | 3 |
-| 4 | War and Peace | 4 |
-| 5 | Sula | 2 |
+**authors table**
+
+**2. Create a *books* table and an *authors* table where each author can have one or multiple books. Books should have a *title* and authors should have a *name*.**
+
+**books table**
+
+| id | title |
+| --- | --- |
+| 1 | The Sympathizer |
+| 2 | Ready Player One |
+| 3 | Men Explain Things to Me |
+| 4 | A Field Guild to Getting Lost |
+
+**book_authors (join) table**
+
+| id | book_id | author_id |
+| --- | --- | --- |
+| 1 | 1 | 3 |
+| 2 | 2 | 2 |
+| 3 | 3 | 1 |
+| 4 | 4 | 1 |
 
 **authors table**
 
 | id | name |
 | --- | --- |
-| 1 | Viet Thanh Nguyen |
-| 2 | Toni Morrison |
-| 3 | Gabriel Garcia Marquez |
-| 4 | Leo Tolstoy |
-| 5 | Mary Oliver |
+| 1 | Rebecca Solnit |
+| 2 | Ernest Cline |
+| 3 | Viet Thanh Nguyen |
 
-**2. Write the SQL to find all books written by a certain author given the author's id.**
+**3. Write the SQL to find all books written by a certain author given the author's id.**
 
 ```SQL
-SELECT * FROM books WHERE author_id = 2;
+SELECT * FROM books
+INNER JOIN books_authors ON books_authors.book_id == books.id
+INNER JOIN authors ON authors.id == book_authors.author_id
+WHERE author.id == 1;
 ```
-
-**3. Create a *books* table and an *authors* table where each author can have one or multiple books. Books should have a *title* and authors should have a *name*.**
-
-**books table**
-
-id | title
----|---
-1 | The Sympathizer
-2 | New and Selected Poems, Volume 2
-3 | One Hundred Years of Solitude
-4 | War and Peace
-5 | Sula
-6 | Ana Karenina
-7 | The Death of Ivan Ilyich
-8 | Love in the Time of Cholera
-
-**book_authors (join) table**
-
-id | book_id | author_id
----|---|---
-1 | 1 | 1
-2 | 2 | 5
-3 | 3 | 3
-4 | 4 | 4
-5 | 5 | 2
-6 | 6 | 4 
-7 | 7 | 4
-8 | 8 | 3
-
-**authors table**
-
-id | name
----|---
-1 | Viet Thanh Nguyen
-2 | Toni Morrison
-3 | Gabriel Garcia Marquez
-4 | Leo Tolstoy
-5 | Mary Oliver
 
 ## CRUD 🎨
 
@@ -84,27 +63,23 @@ id | name
 
 **Create**
 
-- `INSERT INTO books (title, author_id) VALUES ('War and Peace', 2);`
-- `book = Book.new({'title' => 'War and Peace', 'author_id' => 2})`
-- `book.save` 
+- `INSERT INTO books (title) values ('War and Peace');`
+- book = Book.new({'title' => 'War and Peace})
 
 **Read**
 
 - `SELECT * FROM books;`
 - `Book.all`
-- `SELECT * FROM books WHERE id = 5 LIMIT 1;`
-- `Book.find(5)`
-- `Book.find_by(id: 5)`
 
 **Update**
 
-- `UPDATE books SET title = 'Ana Karenina' WHERE id = 5`
-- `book.update({'title' => 'Ana Karenina'})`
+- `UPDATE books SET title = 'Ana Karenina' WHERE id == 5;`
+- `book.update({'title' => 'Ana Karenina'})
 
-**Delete**
+**Destroy**
 
+- `DELETE FROM books WHERE id == 5;`
 - `book.delete`
-- `DELETE FROM books WHERE id = 3`
 
 ## The Active Record Pattern 🧩
 
@@ -172,5 +147,13 @@ id | name
 - [ ] **The belongs_to must have a user_id on it**
 - [ ] **A user has a username, and has many tweets**
 - [ ] **A tweet can have many tags and a tag can have many tweets**
+
+---
+
+## Takeaways
+
+- [x] A domain model can be directly mapped to a database with the Active Record pattern.
+- [x] There are four ways to interact with data: Create, Read, Update, and Delete (CRUD).
+- [x] SQL queries can executed with Ruby to interface a programmatical model with a database.
 
 Still hungry? [Watch Avi Flombaum build a Metaprogrammed Abstract ORM.](https://www.youtube.com/watch?time_continue=2&v=hts7TjpPw-8)
