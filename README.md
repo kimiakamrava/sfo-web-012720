@@ -15,4 +15,5 @@ Lecture notes and code for Flatiron San Francisco's 4th cohort of engineers
 | Review and Inheritance | [Link to code](https://github.com/learn-co-students/sfo-web-012720/tree/master/05-intro-inheritance-oo-my-pets) | [Link to video](https://youtu.be/ACzv9-XNlQ0) |
 | Code Challenge Review | [Link to code](https://github.com/learn-co-students/sfo-web-012720/tree/master/06-cc-review) | [Link to video](https://youtu.be/2dilles8FBs) |
 | Intro to SQL | [Link to code](https://github.com/learn-co-students/sfo-web-012720/tree/master/07-intro-sql) | [Link to video](https://youtu.be/mGTBb25Br9Q) |
-| Intro to ORMS | [Link to code](https://github.com/learn-co-students/sfo-web-012720/tree/master/08-intro-orms) | [Link to video](https://youtu.be/grRBPRZ_oXw) |
+| Intro to ORMs | [Link to code](https://github.com/learn-co-students/sfo-web-012720/tree/master/08-intro-orms) | [Link to video](https://youtu.be/grRBPRZ_oXw) |
+| Intro to ActiveRecord | [Link to code](https://github.com/learn-co-students/sfo-web-012720/tree/master/09-active-record) | [Link to video](https://youtu.be/GYPaLJti-G0) |

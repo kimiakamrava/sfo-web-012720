@@ -10,14 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_25_233130) do
+ActiveRecord::Schema.define(version: 2020_02_06_182923) do
 
-  create_table "boxers", force: :cascade do |t|
-    t.string "name"
+  create_table "bonds", force: :cascade do |t|
+    t.integer "element_id"
+    t.integer "molecule_id"
+    t.integer "element_quantity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  create_table "trainers", force: :cascade do |t|
+  create_table "elements", force: :cascade do |t|
     t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "atomic_number"
+  end
+
+  create_table "molecules", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
