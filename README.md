@@ -19,3 +19,10 @@ Lecture notes and code for Flatiron San Francisco's 4th cohort of engineers
 | Intro to ActiveRecord | [Link to code](https://github.com/learn-co-students/sfo-web-012720/tree/master/09-active-record-intro) | [Link to video](https://youtu.be/GYPaLJti-G0) |
 | ActiveRecord Associations | [Link to code](https://github.com/learn-co-students/sfo-web-012720/tree/master/10-active-record-associations) | [Link to video](https://youtu.be/N7XrfIr-hn0) |
 | Hashes and the Internet | [Link to code](https://github.com/learn-co-students/sfo-web-012720/tree/master/11-hashes-and-the-internet) | [Link to video](https://youtu.be/5GoiwZ0UgCk) |
+
+### Module 2
+
+| Topic            | Code                | Video                |
+| -----            | ----                | -----                |
+| The Internet and Rack | [Link to code](https://github.com/learn-co-students/sfo-web-012720/tree/master/13-rack) | [Link to video](https://youtu.be/YxBJYTV9B8w) |
+| Intro to Sinatra | [Link to code](https://github.com/learn-co-students/sfo-web-012720/tree/master/14-intro-sinatra-mvc) | [Link to video](https://youtu.be/5Y9r3oPjBH0) |
