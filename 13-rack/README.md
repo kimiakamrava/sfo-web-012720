@@ -90,6 +90,7 @@ Tools:
     * See: Network tab of devtools
 
 ## [Rack](https://rack.github.io/)
+
 * Request-response server gem
 * We don't really know how it works, and that's okay!
 * `shotgun`
@@ -97,6 +98,7 @@ Tools:
 ## Static vs. Dynamic Sites
 
 ## Granularity of Concern
+
 * Convention > Configuration
 * Trade freedom for efficiency (e.g. literally write the HTML as a string)
 * BONUS: [Packets, Routing, & Reliability](https://www.youtube.com/watch?v=AYdF7b3nMto)
