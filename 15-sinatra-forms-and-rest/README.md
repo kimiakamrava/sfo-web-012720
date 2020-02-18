@@ -58,6 +58,18 @@
     - `delete`
 - Views: as needed
 
+## Forms in Sinatra 📑
+
+- Forms are the most common tool for collecting data from users
+- HTML Forms
+  - A `<form>` element has an `action` and `method` attributes
+    - `method` specifies the HTTP request method
+    - `action` specifies the target resource path
+  - A `<form>` contains many `<input>`s
+    - An `<input>` can have `type`, `name`, and `id attributes
+    - `<input>`s should be accompanied by `<label>`s
+    - The final `<input>` should have `type="submit"`
+
 ## Render vs. Redirect ⚖️
 
 ### Render (`erb`) ➡️
