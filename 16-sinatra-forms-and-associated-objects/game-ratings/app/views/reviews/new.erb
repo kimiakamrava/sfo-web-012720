@@ -1,36 +1,18 @@
-<h1>Create a new game!</h1>
+<h1>Create a new review!</h1>
 
 <form action="/reviews" method="post">
   <div class="input-wrapper">
-    <label for="title">Title:</label>
-    <input type="text" name="game[title]" id="title">
+    <label for="content">Content:</label>
+    <textarea type="text" name="review[content]" id="content"></textarea>
   </div>
 
   <div class="input-wrapper">
-    <label for="description">Description:</label>
-    <textarea type="text" name="game[description]" id="description"></textarea>
-  </div>
-
-  <div class="input-wrapper">
-    <label for="image_url">Image URL:</label>
-    <input type="text" name="game[image_url]" id="image_url">
-  </div>
-
-  <div class="input-wrapper">
-    <label for="rating">Rating:</label>
-    <input type="number" name="game[rating]" id="rating" max="5" min="0">
-  </div>
-
-  <h2>Review 1</h2>
-    <div class="input-wrapper">
-    <label for="review-content-1">Review 1 Content:</label>
-    <textarea type="text" name="game[reviews][][content]" id="reviews-content-1"></textarea>
-  </div>
-
-  <h2>Review 2</h2>
-    <div class="input-wrapper">
-    <label for="review-content-1">Review 2 Content:</label>
-    <textarea type="text" name="game[reviews][][content]" id="reviews-content-2"></textarea>
+    <label for="game_id">Choose a game:</label>
+    <select name="review[game_id]" id="game_title">
+        <% @games.each do |game| %>
+          <option value="<%= game.id %>"><%= game.title %></option>
+        <% end %>
+    </select>
   </div>
 
   <input type="submit" class="button">

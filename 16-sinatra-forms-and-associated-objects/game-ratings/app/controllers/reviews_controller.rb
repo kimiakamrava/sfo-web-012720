@@ -1,20 +1,17 @@
 class ReviewsController < ApplicationController
   get '/reviews/new' do
+    @games = Game.all
     erb :"/reviews/new"
   end
-  
+
   post '/reviews' do
-    binding.pry
-    @game = Game.new(params[:game].except(:reviews))
+    game_id = params[:review][:game_id]
 
-    params[:game][:reviews].each do |review_content|
-      review = Review.new(review_content)
-      review.game = @game
-      review.save
-    end
+    review = Review.create(
+      content: params[:review][:content],
+      game_id: game_id
+    )
 
-    @game.save
-
-    redirect "/games"
+    redirect "/games/#{game_id}"
   end
 end
