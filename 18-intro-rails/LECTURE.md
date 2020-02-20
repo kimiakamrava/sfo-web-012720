@@ -44,7 +44,7 @@
   - Rails: `app/controller/books_controller.rb` & `config/routes.rb`
 - Different: Rails has more commands to generate file templates! 🙁
 - Different: `rails server` instead of Sinatra's `shotgun` 🙁
-- ❓*What else do you notice or wonder about?* 
+- ❓*What else do you notice or wonder about?*
 
 ### Reviewing the Generation ⚙️
 
@@ -157,6 +157,8 @@ automatically
 - Implicitly linked to controller
   - `render :bananas` explicitly renders `bananas.html.erb`
   - Controller reference optional
+
+---
 
 ## Closing Remarks 🙏
 
