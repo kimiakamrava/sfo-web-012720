@@ -1,0 +1,10 @@
+<h1>Create a Candidate</h1>
+<%= form_for @candidate do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <br>
+  <%= f.label :party %>
+  <%= f.select :party, Candidate.parties.map{ |party| [party, party]} %>
+  <br>
+  <%= f.submit "Create Candidate" %>
+<% end %>

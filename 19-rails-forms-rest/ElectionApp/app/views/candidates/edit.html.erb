@@ -1,0 +1,15 @@
+<h1>Edit a Candidate</h1>
+<%= form_for @candidate do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <br>
+  <%= f.label :party %>
+  <%= f.select :party, Candidate.parties.map{ |party| [party, party]} %>
+  <br>
+  <%= f.submit "Update Candidate" %>
+<% end %>
+<br>
+<br>
+<%= form_tag candidate_path(@candidate.id), method: "delete" do %>
+  <%= submit_tag "Delete #{@candidate.name}" %>
+<% end %>

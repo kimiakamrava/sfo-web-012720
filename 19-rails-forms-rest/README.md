@@ -79,8 +79,6 @@
 <% end %>
 ```
 
-
-
 ## Use private methods 🤫
 
 - Private methods that aren’t to be called from outside the object

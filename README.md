@@ -29,3 +29,4 @@ Lecture notes and code for Flatiron San Francisco's 4th cohort of engineers
 | Sinatra Forms and REST | [Link to code](https://github.com/learn-co-students/sfo-web-012720/tree/master/15-sinatra-forms-and-rest) | [Link to video](https://youtu.be/oStZ1jQsDPE) |
 | Sinatra Forms and Associated Objects | [Link to code](https://github.com/learn-co-students/sfo-web-012720/tree/master/16-sinatra-forms-and-associated-objects) | [Link to video](https://youtu.be/9MOtlyb0_Yw) |
 | Intro to Rails | [Link to code](https://github.com/learn-co-students/sfo-web-012720/tree/master/18-intro-rails) | [Link to video](https://youtu.be/08iSwV4VC5g) |
+| Rails Forms and REST | [Link to code](https://github.com/learn-co-students/sfo-web-012720/tree/master/19-rails-forms-rest) | [Link to video](https://youtu.be/cShu5wwDc70)
