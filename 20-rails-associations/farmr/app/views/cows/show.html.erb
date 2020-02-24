@@ -1,0 +1,9 @@
+<h1><%= @cow.name %></h1>
+
+<p>Spots: <%= @cow.spots %></p>
+
+<p> Farmer: <%= link_to @cow.farmer.name, @cow.farmer %>
+<br/><br/>
+<%= link_to "All Cows", cows_path %>
+<br/><br/>
+<%= link_to "All Farmers", farmers_path %>

@@ -1,0 +1,7 @@
+<h1>All Farmers</h1>
+
+<ul>
+<% @farmers.each do |farmer| %>
+  <li><%= link_to farmer.name, farmer %></li>
+<% end %>
+</ul>

@@ -1,0 +1,22 @@
+<h1>Create a Cow!!</h1>
+
+<% if @cow.errors %>
+  <ul>
+  <% @cow.errors.full_messages.each do |error|%>
+    <li style='color: red;'><%= error %></li>
+  <% end %>
+  </ul>
+<% end %>
+
+<%= form_tag("/cows") do %>
+  <%= label_tag "cow[name]"  %>
+  <%= text_field_tag "cow[name]" %>
+
+  <%= label_tag "cow[spots]" %>
+  <%= number_field_tag "cow[spots]" %>
+
+  <%= label_tag "cow[farmer_id]" %>
+  <%= collection_select :cow, :farmer_id, Farmer.all, :id, :name %>
+
+  <%= submit_tag 'CREATE COW!!'%>
+<% end %>

@@ -1,0 +1,13 @@
+<h1><%= @farmer.name %></h1>
+
+<p> Cows: </p> 
+<ul>
+  <% @farmer.cows.each do |cow| %>
+    <li><%= link_to cow.name, cow %></li>
+  <% end %>
+</ul>
+
+<br/><br/>
+<%= link_to "All Cows", cows_path %>
+<br/><br/>
+<%= link_to "All Farmers", farmers_path %>
