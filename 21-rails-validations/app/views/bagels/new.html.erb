@@ -1,0 +1,31 @@
+<h1>Hey, create a bagel!!! </h1>
+
+<% if @bagel.errors.any? %>
+  <ul style='text-decoration:none'>
+  <% @bagel.errors.full_messages.each do |e| %>
+    <li><%= e %></li>
+  <% end %>
+  </ul>
+
+<% end %>
+
+<%= form_for(@bagel) do |f| %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <br/><br/>
+
+  <%= f.label :price %>
+  <%= f.number_field :price %>
+  <br/><br/>
+
+  <%= f.label :tasty %>
+  <%= f.check_box :tasty %>
+  <br/><br/>
+
+  <%= f.label :shop %>
+  <%= f.collection_select :shop_id, Shop.all, :id, :name %>
+  <br/><br/>
+
+  <%= f.submit %>
+<% end %>

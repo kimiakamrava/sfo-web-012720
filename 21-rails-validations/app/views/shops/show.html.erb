@@ -1,0 +1,13 @@
+<h1><%= @shop.name %></h1>
+
+<h2>City: <%= @shop.city %> </h2>
+
+<ul style='text-decoration:none'>
+<% @shop.bagels.each do |bagel| %>
+  <li>
+    <%= link_to "#{bagel.name} - #{bagel.price}", bagel %>
+  </li>
+<% end %>
+</ul>
+
+<%= link_to "Browse Shops", shops_path %>

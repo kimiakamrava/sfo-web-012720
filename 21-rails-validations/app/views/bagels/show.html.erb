@@ -1,0 +1,9 @@
+<% if flash[:notice] %>
+  <p style="color:green"><%= flash[:notice] %></p>
+<% end %>
+
+<h1><%= @bagel.name %></h1>
+
+<p><%= @bagel.price %></p>
+
+<p><%= link_to @bagel.shop.name, @bagel.shop %> </p>

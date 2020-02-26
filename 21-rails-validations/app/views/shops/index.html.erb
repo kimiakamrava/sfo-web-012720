@@ -1,0 +1,6 @@
+<h1> Browse our Shops! </h1>
+
+<% @shops.each do |shop| %>
+  <%= link_to "#{shop.name} - #{shop.city}", shop_path(shop) %>
+  <br/><br/>
+<% end %>
