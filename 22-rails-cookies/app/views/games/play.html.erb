@@ -1,0 +1,7 @@
+<h1>Imagine we're playing a game.</h1>
+
+<% if @user == nil %>
+  <p>Please log in!</p>
+<% else %>
+  <p>Welcome, <%= @user && @user.username %>.</p>
+<% end %>
