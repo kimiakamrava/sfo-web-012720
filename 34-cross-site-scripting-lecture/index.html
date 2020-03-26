@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Cross Site Scripting</h1>
+
+    <h2>Create A New Post Below</h2>
+    <form>
+      <input type="text" id="title" placeholder="Blog Title" />
+      <input type="submit" value="Submit" />
+    </form>
+
+    <div id="posts"></div>
+
+    <hr />
+
+    <h2>Enter Your Login Information Below</h2>
+    <form>
+      <input
+        type="text"
+        name=""
+        placeholder="Username"
+        autocomplete="username"
+      />
+      <input
+        type="password"
+        name=""
+        id="password-input"
+        placeholder="Password"
+        autocomplete="current-password"
+      />
+    </form>
+  </body>
+</html>
