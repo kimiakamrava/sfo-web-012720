@@ -1,5 +1,5 @@
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 #root {
@@ -13,8 +13,9 @@ ul {
 }
 
 form {
-  border: 1px solid;
+  border: 1px solid grey;
   padding: 2rem;
+  border-radius: 3px;
 }
 
 h2 {
@@ -25,16 +26,15 @@ form {
   margin-top: 3rem;
 }
 
-.input-group label {
-  margin-right: 0.5rem;
-}
-
-.input-group input {
-  padding: 0.4rem 0.5rem;
+form input[type='text'] {
+  padding: 0.6rem 1rem;
   font-size: 0.8rem;
+  margin-right: 1rem;
+  border-radius: 3px;
+  border: 1px solid #009c97;
 }
 
-form input[type="submit"] {
+form input[type='submit'] {
   padding: 0.6rem 1.3rem;
   color: white;
   border-radius: 3px;
