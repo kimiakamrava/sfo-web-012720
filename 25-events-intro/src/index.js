@@ -1,52 +1,53 @@
 document.addEventListener("DOMContentLoaded", function() {
-  console.log("DOM is loaded");
-
-  // listenToFirstButtonClick();
+  listenToAlertMeButtonClick();
   listenToFormSubmit();
-  listenToHelicopterParent();
-
-  // const parent = document.getElementById("parent");
-  // const child = document.getElementById("child");
-
-  // parent.addEventListener("click", function(e) {
-  //   console.log("the parent was clicked");
-  // });
-
-  // child.addEventListener("click", function(e) {
-  //   console.log("the child was clicked");
-  // });
+  listenToButtonClicks();
 });
 
-function listenToHelicopterParent() {
+function listenToButtonClicks() {
   const helicopterParent = document.getElementById("helicopter-parent");
+  helicopterParent.addEventListener("click", handleButtonClicks);
+}
 
-  helicopterParent.addEventListener("click", function(e) {
-    // console.log(e.target);
-    if (e.target.dataset.name === "alert") {
-      alert("hello");
-    } else if (e.target.dataset.name === "log") {
-      console.log("hello");
-    } else if (e.target.dataset.name === "error") {
-      console.error("warning");
-    }
-  });
+function handleButtonClicks(event) {
+  const buttonThatWasClicked = event.target.dataset.name;
+
+  if (buttonThatWasClicked === "alert") {
+    alert("hello there");
+  } else if (buttonThatWasClicked === "log") {
+    console.log("Im logging something");
+  } else if (buttonThatWasClicked === "error") {
+    console.error("I'm an error");
+  }
 }
 
 function listenToFormSubmit() {
-  const commentForm = document.getElementById("comment-form");
+  const form = document.getElementById("comment-form");
 
-  commentForm.addEventListener("submit", function(event) {
-    event.preventDefault();
-    console.log(event.target.commentContent.value);
-    console.log("form was submitted");
-  });
+  form.addEventListener("submit", handleFormSubmit);
 }
 
-function listenToFirstButtonClick() {
-  const firstButton = document.querySelector("button");
-  // const firstButton = document.querySelector(".btn[data-name='alert']")
+function handleFormSubmit(event) {
+  event.preventDefault();
 
-  firstButton.addEventListener("click", function() {
-    console.log("you clicked the first button");
+  const inputField = event.target.querySelector("#new-comment");
+  const commentsContainer = document.getElementById("comments-container");
+
+  const commentPTag = document.createElement("p");
+  commentPTag.textContent = inputField.value;
+
+  commentsContainer.appendChild(commentPTag);
+  // commentsContainer.innerHTML += `<h2>hello there</h2>`;
+
+  inputField.value = "";
+}
+
+function listenToAlertMeButtonClick() {
+  const myButton = document.getElementsByTagName("button")[0];
+  // const myButton = document.querySelectorAll(".btn")[1];
+  // const myButton = document.getElementById('helicopter-parent').children[0].children[1].children[1].children[1].children[0]
+
+  myButton.addEventListener("click", function() {
+    console.log("button was clicked!");
   });
 }
