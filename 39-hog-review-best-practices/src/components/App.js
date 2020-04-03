@@ -1,115 +1,56 @@
-import React, { Component } from "react";
-
-import "../App.css";
-import Nav from "./Nav";
-import HogList from "./Hogs/HogList";
-import Filter from "./Filter";
-import BanishedHogs from "./BanishedHogs/BanishedHogList";
-import hogs from "../porkers_data";
-import { sortBy } from "../utils/utilities";
+import React, { Component } from 'react';
+import '../App.css';
+import Nav from './Nav';
+import hogs from '../porkers_data';
+import HogsList from './HogsList';
+import Filter from './Filter';
+import GreasedHogs from './GreasedHogs';
 
 class App extends Component {
-  // constructor() {
-  //   super();
-
-  //   this.state = {
-  //     greased: false,
-  //     sortBy: "",
-  //     banished: [],
-  //     showBanished: false
-  //   };
-  // this.myMethodName = this.myMethodName.bind(this)
-  // }
-
   state = {
+    hogs: hogs,
     greased: false,
-    sortBy: "",
-    banished: [],
-    showBanished: false
   };
 
-  showHiddenHogs = () => {
-    this.setState({ showBanished: !this.state.showBanished });
-  };
-
-  handleBanishHog = hog => {
-    // const banished = this.state.banished.concat(hog);
-    const banished = [...this.state.banished, hog];
-    // const banished = "banished"
-    // const outObj = {banished}
-    this.setState({ banished });
-  };
-
-  handleToggleGreased = () => {
-    this.setState({ greased: !this.state.greased });
-  };
-
-  handleSelectChange = e => {
-    this.setState({ sortBy: e.target.value });
-  };
-
-  filterBanished = () => {
-    if (this.state.banished.length > 0) {
-      return hogs.filter(hog => {
-        return this.state.banished.indexOf(hog) === -1;
+  toggleGreased = () => {
+    if (this.state.greased) {
+      this.setState({
+        hogs: hogs,
+        greased: false,
       });
     } else {
-      return hogs;
+      // this.setState({
+      //   hogs: this.state.hogs.filter((hog) => hog.greased),
+      //   greased: true,
+      // });
+
+      this.setState((prevState) => {
+        return {
+          hogs: prevState.hogs.filter((hog) => hog.greased),
+          greased: true,
+        };
+      });
     }
   };
 
-  filterGreased = () => {
-    let unbanishedHogs = this.filterBanished();
-    if (this.state.greased) {
-      return unbanishedHogs.filter(hog => hog.greased);
-    } else {
-      return unbanishedHogs;
-    }
+  logPig = () => {
+    console.log('this is rendered through the hoglist component');
   };
 
-  sortHogs = () => {
-    let previouslyFiltered = this.filterGreased();
-    switch (this.state.sortBy) {
-      case "weight":
-        return previouslyFiltered.sort((a, b) => {
-          return a.weight - b.weight;
-        });
-      case "name":
-        return previouslyFiltered.sort((a, b) => {
-          return a.name.localeCompare(b.name);
-        });
-      default:
-        return previouslyFiltered;
-    }
+  logGreasedPig = () => {
+    console.log('this is rendered through the greasedhogs component');
   };
 
   render() {
     return (
-      <div className="ui grid container App">
-        <div className="sixteen wide column centered">
-          <Nav />
-        </div>
-        <div className="sixteen wide column centered">
-          <Filter
-            handleToggleGreased={this.handleToggleGreased}
-            handleSelectChange={this.handleSelectChange}
-            showBanished={
-              this.state.banished.length === 0 ? null : this.showHiddenHogs
-            }
-          />
-        </div>
-        <div className="fourteen wide column centered">
-          {this.state.showBanished && (
-            <BanishedHogs fetchGIF={this.fetchGIF} hogs={this.state.banished} />
-          )}
-        </div>
-        <br />
-        <div className="sixteen wide column centered">
-          <HogList
-            handleBanishedClick={this.handleBanishHog}
-            hogs={this.sortHogs()}
-          />
-        </div>
+      <div className="ui grid container">
+        <Nav />
+        <Filter toggleGreased={this.toggleGreased} />
+        {this.state.greased ? (
+          <GreasedHogs hogs={this.state.hogs} logGreasedPig={this.logGreasedPig} />
+        ) : (
+          <HogsList hogs={this.state.hogs} logPig={this.logPig} />
+        )}
       </div>
     );
   }

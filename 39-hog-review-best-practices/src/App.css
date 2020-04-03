@@ -8,6 +8,10 @@
   display: inline;
 }
 
+.red {
+  background-color: red;
+}
+
 .TwirlyPig:hover {
   transform: scale(1.5);
 }
@@ -128,15 +132,6 @@ ul {
 .footer {
   padding: 1%;
   clear: both;
-}
-
-.banished {
-  border-style: double;
-  border-color: red;
-}
-
-.greased {
-  color: blue;
 }
 
 @keyframes App-logo-spin {
