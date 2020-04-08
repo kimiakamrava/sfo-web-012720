@@ -1,5 +1,5 @@
-import React from "react";
-import api from "../services/api";
+import React from 'react';
+import api from '../services/api';
 
 class Login extends React.Component {
   constructor() {
@@ -7,30 +7,28 @@ class Login extends React.Component {
     this.state = {
       error: false,
       fields: {
-        username: "",
-        password: ""
-      }
+        username: '',
+        password: '',
+      },
     };
   }
 
-  handleChange = e => {
+  handleChange = (e) => {
     const newFields = { ...this.state.fields, [e.target.name]: e.target.value };
     this.setState({ fields: newFields });
   };
 
-  handleSubmit = e => {
-    e.preventDefault()
-    
-    api.auth
-      .login(this.state.fields.username, this.state.fields.password)
-      .then(res => {
-        if (res.error) {
-          this.setState({ error: true });
-        } else {
-          this.props.handleLogin(res);
-          this.props.history.push("/");
-        }
-      });
+  handleSubmit = (e) => {
+    e.preventDefault();
+
+    api.auth.login(this.state.fields.username, this.state.fields.password).then((res) => {
+      if (res.error) {
+        this.setState({ error: true });
+      } else {
+        this.props.handleLogin(res);
+        this.props.history.push('/');
+      }
+    });
   };
 
   render() {

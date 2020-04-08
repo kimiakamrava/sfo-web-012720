@@ -6,6 +6,13 @@
 - [ ] Use localStorage to store token 💽
 - [ ] Automatically fetch user information based on contents of localStorage for already logged-in users 🤖
 
+## Authentication Flow
+
+1. Client: User request access with username and password
+2. The backend validates the credentials
+3. The backend send a token to the client (JWT)
+4. The client stores this token and presents it with every subsequent request (to the backend)
+
 ## Authentication vs. Authorization 🎭
 
 ### Authentication
@@ -33,6 +40,7 @@ We don't want access to the passwords
 Liability - if we have that access, that's dangerous
 
 - password storage (hashed, salted passwords)
+
   - _hashed_ ('one way' function, can't recover the original value)
   - _salted_ - add random string to the password 'password123' + 'aslkdfjalskdfjkasjdf'
   - protects against Rainbow Table attack
@@ -138,11 +146,11 @@ session[:user_id] # read from the cookie
 ### In Rails with JWT Gem
 
 1. Sign a JWT token in Rails
-  -> encode some data
+   -> encode some data
 2. Send it to react app (when the react app sends the username and password)
 3. React app sends it back (store it, send it with the request)
 4. Rails checks validity
-  -> because of JWT, we can trust that Rails app originally created the data
+   -> because of JWT, we can trust that Rails app originally created the data
 
 - In summary:
   - Rails has a secret key
@@ -168,13 +176,13 @@ session[:user_id] # read from the cookie
 ## Questions
 
 - How to hide your secret key?
--> env
+  -> env
 
 - Is React State secure?
--> As safe as any other javascript executing in the browser
--> XSS is a big vulnerability :/
+  -> As safe as any other javascript executing in the browser
+  -> XSS is a big vulnerability :/
 
 - Other attack vectors? Liabilities?
--> Scrub your logs
+  -> Scrub your logs
 
 [Solution](https://github.com/learn-co-curriculum/lectures-starter-code/commit/90a15907615117f961dfc55f9b595143084198fb#diff-3a8884c5b667fda003b25f237e1f300e)

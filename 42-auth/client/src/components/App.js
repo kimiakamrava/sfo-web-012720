@@ -1,19 +1,19 @@
-import React from "react";
-import Navbar from "./Navbar";
-import PaintingContainer from "./PaintingContainer";
-import About from "./About";
-import Login from "./Login";
-import { Route, Switch, withRouter, Redirect } from "react-router-dom";
-import api from "../services/api";
+import React from 'react';
+import Navbar from './Navbar';
+import PaintingContainer from './PaintingContainer';
+import About from './About';
+import Login from './Login';
+import { Route, Switch, withRouter, Redirect } from 'react-router-dom';
+import api from '../services/api';
 
 class App extends React.Component {
   state = { auth: { currentUser: {} } };
 
   componentDidMount() {
-    const token = localStorage.getItem("token");
+    const token = localStorage.getItem('token');
 
     if (token) {
-      api.auth.getCurrentUser().then(user => {
+      api.auth.getCurrentUser().then((user) => {
         const currentUser = { currentUser: user };
 
         this.setState({ auth: currentUser });
@@ -21,15 +21,15 @@ class App extends React.Component {
     }
   }
 
-  handleLogin = user => {
+  handleLogin = (user) => {
     const currentUser = { currentUser: user };
-    localStorage.setItem("token", user.token);
+    localStorage.setItem('token', user.token);
 
     this.setState({ auth: currentUser });
   };
 
   handleLogout = () => {
-    localStorage.removeItem("token");
+    localStorage.removeItem('token');
     this.setState({ auth: { currentUser: {} } });
   };
 
@@ -47,10 +47,8 @@ class App extends React.Component {
           <Switch>
             <Route
               path="/login"
-              render={routerProps => {
-                return (
-                  <Login {...routerProps} handleLogin={this.handleLogin} />
-                );
+              render={(routerProps) => {
+                return <Login {...routerProps} handleLogin={this.handleLogin} />;
               }}
             />
             <Route path="/paintings" component={PaintingContainer} />
