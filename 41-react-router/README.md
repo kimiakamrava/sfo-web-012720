@@ -25,12 +25,12 @@
 - Loading _all_ of front end at once, so it might add to the initial load time
 - Routes coupled with our component structure (can be a good thing long-term)
 
-### What It Do
+### What Does It Do
 
 - Can use vanilla JS to change the route in the console (mimic routing client side)
 
 ```js
-window.history.pushState({}, null, "page");
+window.history.pushState({}, null, 'page');
 ```
 
 ```js
@@ -45,7 +45,7 @@ window.history.back();
 - Then, import!
 
 ```js
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 ```
 
 ### React Router Components
@@ -147,10 +147,8 @@ import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 ```jsx
 <Route
   path="/paintings/:slug"
-  render={props => {
-    const painting = this.state.paintings.find(
-      p => p.slug === props.match.params.slug
-    );
+  render={(props) => {
+    const painting = this.state.paintings.find((p) => p.slug === props.match.params.slug);
 
     return <PaintingShow painting={painting} />;
 
@@ -169,9 +167,7 @@ import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 
 ## Takeaways
 
--[x] Client-side routing helps us SPA by preventing page refreshes
--[x] React Router handles client-side routing with special components
--[x] The building blocks of React Router are `<Router>`, `<Route>`, `<Link>`, `<Switch>`, and `<Redirect>`
+-[x] Client-side routing helps us SPA by preventing page refreshes -[x] React Router handles client-side routing with special components -[x] The building blocks of React Router are `<Router>`, `<Route>`, `<Link>`, `<Switch>`, and `<Redirect>`
 
 ## Resources
 

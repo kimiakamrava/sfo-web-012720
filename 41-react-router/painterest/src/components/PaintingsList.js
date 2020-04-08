@@ -1,8 +1,9 @@
 import React from 'react';
+
 import DeleteablePainting from './DeleteablePainting';
 
 const PaintingsList = ({ handleDelete, handleVote, paintings }) => {
-  const items = paintings.map(pntg => (
+  const items = paintings.map((pntg) => (
     <DeleteablePainting
       key={pntg.id}
       painting={pntg}

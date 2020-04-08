@@ -1,4 +1,5 @@
 import React from 'react';
+
 import Painting from './Painting';
 import DeleteConfirmation from './DeleteConfirmation';
 
@@ -7,15 +8,15 @@ class DeleteablePainting extends React.Component {
     super();
 
     this.state = {
-      deleteView: false
+      deleteView: false,
     };
 
     this.handleToggle = this.handleToggle.bind(this);
   }
 
   handleToggle() {
-    this.setState(prevState => ({
-      deleteView: !prevState.deleteView
+    this.setState((prevState) => ({
+      deleteView: !prevState.deleteView,
     }));
   }
 

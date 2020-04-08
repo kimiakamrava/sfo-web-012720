@@ -1,5 +1,4 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
 
 const PaintingShow = ({ painting }) => {
   return (
@@ -24,10 +23,10 @@ const PaintingShow = ({ painting }) => {
         </div>
         <div className="extra content">{painting.museum.name}</div>
       </div>
-      <Link to="/paintings" className="ui primary button">
+      <a className="ui primary button">
         <i className="left arrow icon" />
         Back
-      </Link>
+      </a>
     </div>
   );
 };
